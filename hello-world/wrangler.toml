@@ -1,4 +1,5 @@
 name="hono-minimal"
 main="src/index.ts"
+account_id = "307ebd51f6c21a90c3873587c11a2913"
 
 compatibility_date = "2022-11-22"
