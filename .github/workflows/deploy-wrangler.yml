@@ -5,6 +5,9 @@ on:
       worker:
         description: 'Name of the worker'
         required: true
+      commands:
+        description: 'Precommands'
+        default: 'npm install'
 
 jobs:
   deploy:
@@ -17,5 +20,5 @@ jobs:
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          preCommands: npm install
+          preCommands: ${{ github.event.inputs.commands }}
           workingDirectory: ${{ github.event.inputs.worker }}
